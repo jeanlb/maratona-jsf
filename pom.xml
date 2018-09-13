@@ -1,0 +1,56 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>br.com.maratona-jsf</groupId>
+	<artifactId>maratona-jsf</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
+	<name>maratona-jsf</name>
+	<description>Projeto de Estudos de JSf</description>
+
+	<properties>
+		<!-- configuracao necessaria (maven.compiler) para evitar erro de compilacao 
+			no Eclipse -->
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+	</properties>
+
+	<dependencies>
+
+		<!-- API JSF | https://mvnrepository.com/artifact/javax.faces/javax.faces-api -->
+		<dependency>
+			<groupId>javax.faces</groupId>
+			<artifactId>javax.faces-api</artifactId>
+			<version>2.2</version>
+			<scope>provided</scope>
+		</dependency>
+		<!-- APIs do JavaEE, incluindo CDI | https://mvnrepository.com/artifact/javax/javaee-api -->
+		<dependency>
+			<groupId>javax</groupId>
+			<artifactId>javaee-api</artifactId>
+			<version>8.0</version>
+			<scope>provided</scope>
+		</dependency>
+
+	</dependencies>
+
+	<build>
+		<!-- configuracao para gerar war com o nome especificado. juntamente com 
+			a configuracao 'maven-compiler-plugin' faz o deploy no Wildfly configurado 
+			no Eclipse para o usar em seu contexto o nome do war gerado -->
+		<finalName>maratona-jsf</finalName>
+		<plugins>
+			<!-- configuracao necessaria para evitar erro de compilacao no Eclipse, 
+				informando que a versao do Java eh a 8 -->
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
